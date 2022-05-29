@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <!-- HTML5Shiv -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Estilo customizado -->
+    <link rel="shortcut icon" href="imagens/04favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="css/estilo2.css">
+   
+
+    <title>Alimentação saudável para todos - Luana Pinudo</title>
+  </head>
+  <body>
+
+      <header><!--Inicio do Cabecalho-->
+          <nav class="navbar navbar-expand-md navbar-light fixed-top navbar-transparente">
+              <div class="container">
+                  <a href="index.html" class="navbar-brand">
+                    <img src="imagens/logoLuana04.png" alt="Logo de luana" width="140" height="50">
+                  </a>
+
+                  <button class="navbar-toggler" data-toggle="collapse" data-target="#nav-principal" >
+                    <i class="fas fa-bars text-white"></i>
+                  </button>
+
+                  <div class="collapse navbar-collapse" id="nav-principal">
+                      <ul class="navbar-nav ml-auto">
+                          <li class="nav-item">
+                              <a href="legumes.html" class="nav-link">Legumes</a>
+                          </li>
+                          <li class="nav-item">
+                              <a href="frutas.html" class="nav-link">Frutas</a>
+                          </li>
+                          <li class="nav-item">
+                               <a href="receitas.html" class="nav-link">Receitas</a>
+                          </li>
+
+                          <li class="nav-item divisor"></li>
+
+                          <li class="nav-item">
+                                <a href="" class="nav-link">Cadastrar</a>
+                          </li>
+                          <li class="nav-item">
+                                <a href="entra.php" class="nav-link">Entrar</a>
+                          </li>
+                      </ul>
+                  </div>
+
+              </div>
+          </nav>
+      </header><!--Fim do Cabecalho-->
+
+      <section id="home" class="d-inline-flex"><!--home -->
+        <div class="container align-self-center"><!--container -->
+          <div class="row"><!--row -->
+            <div class="col-md-12 capa">
+              
+             <!-- ----------------- PlayList de videos começo ----------------- -->
+             <h3 class="heading">Aulas de Receitas</h3>
+             <div class="container-2">
+                 <div class="main-video">
+                     <div class="iframe">
+                         <iframe  width="650" height="450" src="https://www.youtube.com/embed/XrcM25MNgHw"></iframe>
+                         <h3 class="title">Receita.01</h3>
+                     </div>
+                 </div>
+         
+                 <div class="video-list">
+                     <div class="vid active">
+                      <iframe src="https://www.youtube.com/embed/XrcM25MNgHw"></iframe>
+                         <h3 class="title">Receita.01</h3>
+                     </div>
+                     <div class="vid">
+                      <iframe src="https://www.youtube.com/embed/8HC4MwaqboE"></iframe>
+                         <h3 class="title">Receita.02</h3>
+                     </div>
+                     <div class="vid">
+                      <iframe src="https://www.youtube.com/embed/VVI74X4prk8"></iframe>
+                         <h3 class="title">Receita.03</h3>
+                     </div>
+                     <div class="vid">
+                      <iframe src="https://www.youtube.com/embed/9E5W5Vz-vOs"></iframe>
+                         <h3 class="title">Receita.04</h3>
+                     </div>
+                     <div class="vid">
+                      <iframe src="https://www.youtube.com/embed/HPOGgTh3EmU"></iframe>
+                         <h3 class="title">Receita.05</h3>
+                     </div>
+                     <div class="vid">
+                      <iframe src="https://www.youtube.com/embed/2pdwCoWgmIc"></iframe>
+                         <h3 class="title">Receita.06</h3>
+                     </div>
+                     <div class="vid">
+                      <iframe src="https://www.youtube.com/embed/wxuqOb0LHkM"></iframe>
+                         <h3 class="title">Receita.07</h3>
+                     </div>
+                     <div class="vid">
+                      <iframe src="https://www.youtube.com/embed/EbHymcZTrBE"></iframe>
+                         <h3 class="title">Receita.08</h3>
+                     </div>
+                     <div class="vid">
+                      <iframe src="https://www.youtube.com/embed/A07ixE30wIc"></iframe>
+                         <h3 class="title">Receita.09</h3>
+                     </div>
+         
+                 </div>
+             </div>
+             <script>
+                 let listVideo = document.querySelectorAll('.video-list .vid');
+                 let mainVideo = document.querySelector('.main-video iframe');
+                 let title = document.querySelector('.main-video .title');
+         
+                 listVideo.forEach(iframe =>{
+                  iframe.onclick = ()=>{
+                         listVideo.forEach(vid => vid.classList.remove('active'));
+                         iframe.classList.add('active');
+                         if(iframe.classList.contains('active')){
+                             let src = iframe.children[0].getAttribute('src');
+                             mainVideo.src = src;
+                             let text = iframe.children[1].innerHTML;
+                             title.innerHTML = text;
+                         };
+                     };
+                 });
+             </script>
+            <!-- ----------------- PlayList de videos final ----------------- -->
+  
+            </div>
+          </div><!--/row -->
+        </div><!--/container -->
+      </section><!--/home -->
+
+      <section id="servicos">
+      			  
+		  
+      <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-2">
+              <a href="inicio.html" class="navbar-brand">
+                <img src="imagens/logoLuana04.png" alt="Logo de luana" width="140" height="50">
+              </a>
+            </div>
+            <div class="col-md-2">
+              <h4>Luana Pinudo</h4>
+              <ul class="navbar-nav">
+                <li><a href="">Sobre</a></li>
+                <li><a href="">Por que?</a></li>
+                <li><a href="">Novidades</a></li>
+              </ul>
+            </div>
+            <div class="col-md-2">
+              <h4>Exemplos</h4>
+              <ul class="navbar-nav">
+                <li><a href="">Mudanças</a></li>
+                <li><a href="">Experiências</a></li>
+              </ul>
+            </div>
+            <div class="col-md-2">
+              <h4>links uteis</h4>
+              <ul class="navbar-nav">
+                <li><a href="legumes.html">Legumes</a></li>
+                <li><a href="frutas.html">Frutas</a></li>
+                <li><a href="receitas.html">Receitas</a></li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <ul>
+                <li>
+                  <a href=""><img src="imagens/facebook.png"></a>
+                </li>
+                
+                <li>
+                  <a href=""><img src="imagens/instagram.png"></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    <!-- JavaScript (Opcional) -->
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>
